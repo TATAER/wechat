@@ -64,6 +64,6 @@ class WechatController extends Controller
 
     public function draw(Request $request)
     {
-        return view('draw', ['name' => 'Samantha']);
+        return view('wechat/draw', ['name' => 'Samantha']);
     }
 }
