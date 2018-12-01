@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Log;
 
 class WechatController extends Controller
@@ -30,5 +31,13 @@ class WechatController extends Controller
         Log::info('return response.');
 
         return $wechat->server->serve();//这一句是对微信进行了验证
+    }
+
+    public function auth(Request $request)
+    {
+        Log::info(json_encode($request->all()));
+    }
+    public function test(Request $request){
+        echo 111;
     }
 }

@@ -59,8 +59,8 @@ return [
      */
     'official_account' => [
         'default' => [
-            'app_id' => 'wx2b9d1b9cff2c2289',         // AppID
-            'secret' => '009c54ca52ef7bacdb39b370633d1540',    // AppSecret
+            'app_id' => 'wxe41f26bdfd345a05',         // AppID
+            'secret' => 'a3d445e492c57add0ee71cb61c746dcc',    // AppSecret
             'token' => 'banjiangyuhuolianghangqiuyan',           // Token
             'aes_key' => 'qH45L1LK8ti4gN7oZyTJx9bVorItwBCXRSS8OQMJtxy',                 // EncodingAESKey
 
