@@ -32,6 +32,7 @@ class WechatServce
             $userData['city'] = $userInfo['city'];
             $userData['province'] = $userInfo['province'];
             $userData['country'] = $userInfo['country'];
+            $userData['head_img'] = $userInfo['headimgurl'];
             User::insert($userData);
         }
         return redirect("/test");
