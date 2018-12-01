@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
-<title>H5手机翻牌抽奖领红包代码 - 站长素材</title>
+<title>翻牌抽奖领红包</title>
 <link href="css/weui.min.css" rel="stylesheet" />
 <style>
 body {
@@ -126,7 +126,7 @@ body {
 <br />
 <br />
 
-<script src="js/jquery-1.9.1.min.js"></script>
+<script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js"></script>
 <script>
 
 
