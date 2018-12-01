@@ -26,7 +26,7 @@ class ChangeButtonCommand extends Command
 
         $button = [
             'button' => [
-                    ['name' => '去抽奖', 'type' => 'view', 'url' => 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe41f26bdfd345a05&redirect_uri=http://47.106.72.245/auth&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect'],
+                    ['name' => '去抽奖', 'type' => 'view', 'url' => 'http://df.youlebaobao.com/auth'],
                     ['name' => '我的', 'sub_button' => [
                             [
                                 "type" => "view",

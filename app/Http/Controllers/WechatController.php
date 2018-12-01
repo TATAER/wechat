@@ -57,7 +57,7 @@ class WechatController extends Controller
     }
 
     public function auth(){
-        $url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe41f26bdfd345a05&redirect_uri=http://47.106.72.245/login&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+        $url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe41f26bdfd345a05&redirect_uri=http://df.youlebaobao.com/login&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
         return redirect($url);
     }
 }
