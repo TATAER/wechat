@@ -40,11 +40,11 @@ class WechatController extends Controller
         if (empty($code)) {
             echo "登录失败";
         } else {
-            $getTokenUrl = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=' . config('wechat.official_account.defautl.app_id') . '&secret=' . config('wechat.official_account.defautl.secret') . '&code=' . $code . '&grant_type=authorization_code';
+            $getTokenUrl = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=' . config('wechat.official_account.default.app_id') . '&secret=' . config('wechat.official_account.default.secret') . '&code=' . $code . '&grant_type=authorization_code';
             $tokenRespone = file_get_contents($getTokenUrl);
             $tokenRespone = json_decode($tokenRespone, true);
             $token = $tokenRespone['access_token'];
-            $getUserInfoUrl = 'https://api.weixin.qq.com/sns/userinfo?access_token=' . $token . '&openid=' . config('wechat.official_account.defautl.app_id') . '&lang=zh_CN';
+            $getUserInfoUrl = 'https://api.weixin.qq.com/sns/userinfo?access_token=' . $token . '&openid=' . config('wechat.official_account.default.app_id') . '&lang=zh_CN';
             $userInfoResponse = file_get_contents($getUserInfoUrl);
             $userInfo = json_decode($userInfoResponse, true);
             Log::info($userInfoResponse);
