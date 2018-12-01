@@ -6,7 +6,7 @@
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
 <title>H5手机翻牌抽奖领红包代码 - 站长素材</title>
-<link href="css/WeUI/weui.min.css" rel="stylesheet" />
+<link href="css/weui.min.css" rel="stylesheet" />
 <style>
 body {
     background: #E7244B;
