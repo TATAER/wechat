@@ -8,7 +8,7 @@
 
 namespace App\Http\Services;
 
-use App\Models\UserModel;
+use App\Models\User;
 use Log;
 
 class WechatServce
@@ -25,14 +25,14 @@ class WechatServce
         $userInfoResponse = file_get_contents($getUserInfoUrl);
         Log::info($userInfoResponse);
         $userInfo = json_decode($userInfoResponse, true);
-        if (is_null(UserModel::getUserInfoByOpenId($userInfo['openid']))){
+        if (is_null(User::getUserInfoByOpenId($userInfo['openid']))){
             $userData['nick_name'] = $userInfo['nickname'];
             $userData['open_id'] = $userInfo['openid'];
             $userData['sex'] = $userInfo['sex'];
             $userData['city'] = $userInfo['city'];
             $userData['province'] = $userInfo['province'];
             $userData['country'] = $userInfo['country'];
-            UserModel::insert($userData);
+            User::insert($userData);
         }
         return redirect("/test");
 
