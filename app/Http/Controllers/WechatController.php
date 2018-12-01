@@ -64,6 +64,31 @@ class WechatController extends Controller
 
     public function draw(Request $request)
     {
-        return view('wechat/draw', ['name' => 'Samantha']);
+        $drawList1 = [
+            1=>'images/fugai/1.png',
+            2=>'images/fugai/2.png',
+            3=>'images/fugai/3.png',
+            4=>'images/fugai/4.png',
+            5=>'images/fugai/5.png',
+            6=>'images/fugai/6.png',
+            7=>'images/fugai/7.png',
+            8=>'images/fugai/8.png',
+            9=>'images/fugai/9.png',
+        ];
+        $drawList2 = [
+            1=>'images/jieguo/1.png',
+            2=>'images/jieguo/2.png',
+            3=>'images/jieguo/3.png',
+            4=>'images/jieguo/4.png',
+            5=>'images/jieguo/5.png',
+            6=>'images/jieguo/6.png',
+            7=>'images/jieguo/7.png',
+            8=>'images/jieguo/8.png',
+            9=>'images/jieguo/9.png',
+        ];
+
+        shuffle($drawList1);
+        shuffle($drawList2);
+        return view('wechat/draw', ['drawList1' =>$drawList1,'drawList2' =>$drawList2]);
     }
 }
