@@ -126,7 +126,7 @@ body {
 <br />
 <br />
 
-<script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js"></script>
+<script src="js/jquery-1.9.1.min.js"></script>
 <script>
 
 
