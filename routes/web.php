@@ -18,3 +18,4 @@ Route::any('/wechat', 'WechatController@serve');
 Route::any('/auth', 'WechatController@auth');
 Route::any('/test', 'WechatController@test');
 Route::any('/login', 'WechatController@login');
+Route::any('/draw', 'WechatController@draw');
