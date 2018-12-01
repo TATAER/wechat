@@ -24,7 +24,7 @@ class WechatController extends Controller
         Log::info('request arrived.'); # 注意：Log 为 Laravel 组件，所以它记的日志去 Laravel 日志看，而不是 EasyWeChat 日志
 
         $wechat = app('wechat.official_account');
-        $wechat->server->push(function($message){
+        $wechat->server->push(function ($message) {
             return "欢迎关注 overtrue！";
         });
 
@@ -35,9 +35,27 @@ class WechatController extends Controller
 
     public function auth(Request $request)
     {
+        $code = $request->get('code');
+
+        if (empty($code)) {
+            echo "登录失败";
+        } else {
+            $getTokenUrl = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=' . config('wechat.official_account.defautl.app_id') . '&secret=' . config('wechat.official_account.defautl.secret') . '&code=' . $code . '&grant_type=authorization_code';
+            $tokenRespone = file_get_contents($getTokenUrl);
+            $tokenRespone = json_decode($tokenRespone, true);
+            $token = $tokenRespone['access_token'];
+            $getUserInfoUrl = 'https://api.weixin.qq.com/sns/userinfo?access_token=' . $token . '&openid=' . config('wechat.official_account.defautl.app_id') . '&lang=zh_CN';
+            $userInfoResponse = file_get_contents($getUserInfoUrl);
+            $userInfo = json_decode($userInfoResponse, true);
+            Log::info($userInfoResponse);
+            return  redirect("/test");
+        }
+
         Log::info(json_encode($request->all()));
     }
-    public function test(Request $request){
+
+    public function test(Request $request)
+    {
         Log::info(json_encode($request->all()));
         echo 111;
     }
