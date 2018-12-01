@@ -38,6 +38,7 @@ class WechatController extends Controller
         Log::info(json_encode($request->all()));
     }
     public function test(Request $request){
+        Log::info(json_encode($request->all()));
         echo 111;
     }
 }
