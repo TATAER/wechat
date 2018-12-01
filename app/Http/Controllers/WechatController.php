@@ -8,6 +8,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\WechatServce;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 use Log;
 
@@ -40,15 +42,7 @@ class WechatController extends Controller
         if (empty($code)) {
             echo "登录失败";
         } else {
-            $getTokenUrl = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=' . config('wechat.official_account.default.app_id') . '&secret=' . config('wechat.official_account.default.secret') . '&code=' . $code . '&grant_type=authorization_code';
-            $tokenRespone = file_get_contents($getTokenUrl);
-            $tokenRespone = json_decode($tokenRespone, true);
-            $token = $tokenRespone['access_token'];
-            $getUserInfoUrl = 'https://api.weixin.qq.com/sns/userinfo?access_token=' . $token . '&openid=' . config('wechat.official_account.default.app_id') . '&lang=zh_CN';
-            $userInfoResponse = file_get_contents($getUserInfoUrl);
-            $userInfo = json_decode($userInfoResponse, true);
-            Log::info($userInfoResponse);
-            return  redirect("/test");
+            return WechatServce::auth($code);
         }
 
         Log::info(json_encode($request->all()));
@@ -56,6 +50,8 @@ class WechatController extends Controller
 
     public function test(Request $request)
     {
+       echo  Cache::get('111');
+        Cache::put("111","333", 70000);
         Log::info(json_encode($request->all()));
         echo 111;
     }
