@@ -50,14 +50,20 @@ class WechatController extends Controller
 
     public function test(Request $request)
     {
-       echo  Cache::get('111');
-        Cache::put("111","333", 70000);
+        echo Cache::get('111');
+        Cache::put("111", "333", 70000);
         Log::info(json_encode($request->all()));
         echo 111;
     }
 
-    public function auth(){
+    public function auth()
+    {
         $url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe41f26bdfd345a05&redirect_uri=http://df.youlebaobao.com/login&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
         return redirect($url);
+    }
+
+    public function draw(Request $request)
+    {
+        return view('draw', ['name' => 'Samantha']);
     }
 }

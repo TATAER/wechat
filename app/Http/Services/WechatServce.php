@@ -35,7 +35,7 @@ class WechatServce
             $userData['head_img'] = $userInfo['headimgurl'];
             User::insert($userData);
         }
-        return redirect("/test");
+        return redirect("/draw");
 
     }
 }
