@@ -19,15 +19,14 @@ class ChangeButtonCommand extends Command
     public function handle()
     {
         $url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=' . config('wechat.official_account.default.app_id') . '&secret=' . config('wechat.official_account.default.secret');
-//        $reponse = file_get_contents($url);
-//        dd(json_decode($reponse, true));
-
-        $token = '16_RbWEDCiQWxk4oDXz2FJYHYj9FG2uHj9YWS1YAuBt_Wf26jNM_5_74ozqziH3kxg5tWj4RdSsZBFSAZlrqTjz0gQO_pxvKVRW1yPqc5WSisvhFPv_A28YalRfqvRkl7BilExK568OhQsgGjbaHJMcAHAKMP';
+        $reponse = file_get_contents($url);
+        $reponseArr = json_decode($reponse, true);
+        $token = $reponseArr['access_token'];
         $url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token=' . $token;
 
         $button = [
             'button' => [
-                    ['name' => '去抽奖', 'type' => 'view', 'url' => 'http://www.baidu.com'],
+                    ['name' => '去抽奖', 'type' => 'view', 'url' => 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe41f26bdfd345a05&redirect_uri=http://47.106.72.245/auth&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect'],
                     ['name' => '我的', 'sub_button' => [
                             [
                                 "type" => "view",

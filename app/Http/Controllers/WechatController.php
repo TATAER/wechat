@@ -35,7 +35,7 @@ class WechatController extends Controller
         return $wechat->server->serve();//这一句是对微信进行了验证
     }
 
-    public function auth(Request $request)
+    public function login(Request $request)
     {
         $code = $request->get('code');
 
@@ -54,5 +54,10 @@ class WechatController extends Controller
         Cache::put("111","333", 70000);
         Log::info(json_encode($request->all()));
         echo 111;
+    }
+
+    public function auth(){
+        $url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe41f26bdfd345a05&redirect_uri=http://47.106.72.245/login&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+        return redirect($url);
     }
 }
