@@ -60,47 +60,47 @@ body {
 </style>
 </head>
 <body>
-<img class="top" src="ldimg/top.jpg" alt="">
+<img class="top" src="images/top.jpg" alt="">
 <div style="width:100%; height:10vw; line-height:6vw; text-align:center;"><span style="color:#fff; font-size:4vw;">您共有 10 次翻牌机会</span></div>
 <div class="weui-grids" id="draw">
 	<a href="javascript:;" id="a1" class="weui-grid">
-		<img class="img" src="ldimg/fugai/1.png" alt="">
-		<img class="info" src="ldimg/jieguo/1.png" alt="">
+		<img class="img" src="images/fugai/1.png" alt="">
+		<img class="info" src="images/jieguo/1.png" alt="">
 	</a>
 	<a href="javascript:;" id="a2" class="weui-grid">
-		<img class="img" src="ldimg/fugai/2.png" alt="">
-		<img class="info" src="ldimg/jieguo/2.png" alt="">
+		<img class="img" src="images/fugai/2.png" alt="">
+		<img class="info" src="images/jieguo/2.png" alt="">
 	</a>
 	<a href="javascript:;" id="a3" class="weui-grid">
-		<img class="img" src="ldimg/fugai/3.png" alt="">
-		<img class="info" src="ldimg/jieguo/3.png" alt="">
+		<img class="img" src="images/fugai/3.png" alt="">
+		<img class="info" src="images/jieguo/3.png" alt="">
 	</a>
 	<a href="javascript:;" id="a4" class="weui-grid">
-		<img class="img" src="ldimg/fugai/4.png" alt="">
-		<img class="info" src="ldimg/jieguo/4.png" alt="">
+		<img class="img" src="images/fugai/4.png" alt="">
+		<img class="info" src="images/jieguo/4.png" alt="">
 	</a>
 	<a href="javascript:;" id="a5" class="weui-grid">
-		<img class="img" src="ldimg/fugai/5.png" alt="">
-		<img class="info" src="ldimg/jieguo/5.png" alt="">
+		<img class="img" src="images/fugai/5.png" alt="">
+		<img class="info" src="images/jieguo/5.png" alt="">
 	</a>
 	<a href="javascript:;" id="a6" class="weui-grid">
-		<img class="img" src="ldimg/fugai/6.png" alt="">
-		<img class="info" src="ldimg/jieguo/6.png" alt="">
+		<img class="img" src="images/fugai/6.png" alt="">
+		<img class="info" src="images/jieguo/6.png" alt="">
 	</a>
 	<a href="javascript:;" id="a7" class="weui-grid">
-		<img class="img" src="ldimg/fugai/7.png" alt="">
-		<img class="info" src="ldimg/jieguo/7.png" alt="">
+		<img class="img" src="images/fugai/7.png" alt="">
+		<img class="info" src="images/jieguo/7.png" alt="">
 	</a>
 	<a href="javascript:;" id="a8" class="weui-grid">
-		<img class="img" src="ldimg/fugai/8.png" alt="">
-		<img class="info" src="ldimg/jieguo/8.png" alt="">
+		<img class="img" src="images/fugai/8.png" alt="">
+		<img class="info" src="images/jieguo/8.png" alt="">
 	</a>
 	<a href="javascript:;" id="a9" class="weui-grid">
-		<img class="img" src="ldimg/fugai/9.png" alt="">
-		<img class="info" src="ldimg/jieguo/9.png" alt="">
+		<img class="img" src="images/fugai/9.png" alt="">
+		<img class="info" src="images/jieguo/9.png" alt="">
 	</a>
 </div>
-<img class="bottom" src="ldimg/bottom.png" />
+<img class="bottom" src="images/bottom.png" />
 <div class="js_dialog" id="iosDialog1" style="display: none;">
 	<div class="weui-mask"></div>
 	<div class="weui-dialog">
