@@ -85,10 +85,10 @@
 <div class="taskRules">
     <div class="rules">
         <div class="task_title">
-            <img src="./zhuan/task_draw_reward_rule_title_img.png" alt="task_draw_reward_rule_title_img">
+            <img src="./images/zhuan/task_draw_reward_rule_title_img.png" alt="task_draw_reward_rule_title_img">
         </div>
         <div class="rules_cover">
-            <img src="./zhuan/task_draw_reward_rule_white_img.png" alt="task_draw_reward_rule_white_img">
+            <img src="./images/zhuan/task_draw_reward_rule_white_img.png" alt="task_draw_reward_rule_white_img">
         </div>
         <div class="rules_con">
             <ul>
