@@ -89,6 +89,6 @@ class WechatController extends Controller
 
         shuffle($drawList1);
         shuffle($drawList2);
-        return view('wechat/draw', ['drawList1' =>$drawList1,'drawList2' =>$drawList2]);
+        return view('wechat/draw1', ['drawList1' =>$drawList1,'drawList2' =>$drawList2]);
     }
 }
