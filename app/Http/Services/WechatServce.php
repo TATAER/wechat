@@ -18,14 +18,13 @@ class WechatServce
     {
         $getTokenUrl = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=' . config('wechat.official_account.default.app_id') . '&secret=' . config('wechat.official_account.default.secret') . '&code=' . $code . '&grant_type=authorization_code';
         $tokenRespone = file_get_contents($getTokenUrl);
-        Log::info($tokenRespone);
         $tokenRespone = json_decode($tokenRespone, true);
         $token = $tokenRespone['access_token'];
         $getUserInfoUrl = 'https://api.weixin.qq.com/sns/userinfo?access_token=' . $token . '&openid=' . config('wechat.official_account.default.app_id') . '&lang=zh_CN';
         $userInfoResponse = file_get_contents($getUserInfoUrl);
-        Log::info($userInfoResponse);
         $userInfo = json_decode($userInfoResponse, true);
-        if (is_null(User::getUserInfoByOpenId($userInfo['openid']))){
+        $user = User::getUserInfoByOpenId($userInfo['openid']);
+        if (is_null($user)) {
             $userData['nick_name'] = $userInfo['nickname'];
             $userData['open_id'] = $userInfo['openid'];
             $userData['sex'] = $userInfo['sex'];
@@ -33,9 +32,12 @@ class WechatServce
             $userData['province'] = $userInfo['province'];
             $userData['country'] = $userInfo['country'];
             $userData['head_img'] = $userInfo['headimgurl'];
-            User::insert($userData);
+            $user = User::create($userData);
+            $id = $user->id;
+        } else {
+            $id = $user->id;
         }
-        return redirect("/draw");
+        return redirect("/draw?id=" . $id);
 
     }
 }

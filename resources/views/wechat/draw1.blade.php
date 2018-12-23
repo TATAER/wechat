@@ -16,6 +16,10 @@
     <script type="text/javascript" src="./js/awardRotate.js"></script>
     <script type="text/javascript" src="./js/index.js"></script>
 </head>
+<script>
+    var userId = '{{$user_id}}'
+    var salt = 0;
+</script>
 <body style="">
 <!-- 弹出层 -->
 <div class="cover" style="width: 400px; height: 532px; display: none;"></div>

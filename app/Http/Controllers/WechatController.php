@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Services\WechatServce;
+use App\Models\DrawLog;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 use Log;
@@ -64,31 +65,23 @@ class WechatController extends Controller
 
     public function draw(Request $request)
     {
-        $drawList1 = [
-            1=>'images/fugai/1.png',
-            2=>'images/fugai/2.png',
-            3=>'images/fugai/3.png',
-            4=>'images/fugai/4.png',
-            5=>'images/fugai/5.png',
-            6=>'images/fugai/6.png',
-            7=>'images/fugai/7.png',
-            8=>'images/fugai/8.png',
-            9=>'images/fugai/9.png',
-        ];
-        $drawList2 = [
-            1=>'images/jieguo/1.png',
-            2=>'images/jieguo/2.png',
-            3=>'images/jieguo/3.png',
-            4=>'images/jieguo/4.png',
-            5=>'images/jieguo/5.png',
-            6=>'images/jieguo/6.png',
-            7=>'images/jieguo/7.png',
-            8=>'images/jieguo/8.png',
-            9=>'images/jieguo/9.png',
-        ];
+        $userId = $request->get('id', 0);
+        if ($userId <= 0) {
+            return redirect('/auth');
+        }
+        return view('wechat/draw1', ['user_id' => $userId]);
+    }
 
-        shuffle($drawList1);
-        shuffle($drawList2);
-        return view('wechat/draw1', ['drawList1' =>$drawList1,'drawList2' =>$drawList2]);
+    public function getDrawCount(Request $request)
+    {
+        $userId = $request->get('id', 0);
+        $count = DrawLog::where('user_id', $userId)->count();
+        if ($count == 0) {
+            $insert = array();
+            $insert['user_id'] = $userId;
+            DrawLog::insert($insert);
+        }
+        $salt = mt_rand(0,10);
+        echo json_encode(['counts' => $count, 'salt'=>$salt]);
     }
 }
